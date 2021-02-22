@@ -1,0 +1,6 @@
+
+---
+- name: install required system packages
+  apt: name={{ item }} update_cache=yes state=latest
+  loop: "{{ dependencies }}"
+  tags: dependencies
